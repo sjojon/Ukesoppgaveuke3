@@ -1,10 +1,4 @@
-﻿using System.ComponentModel.Design;
-using System.Runtime.CompilerServices;
-using System.Xml.Linq;
-using Ukesoppgaveuke3;
-using static System.Reflection.Metadata.BlobBuilder;
-
-namespace Ukesoppgaveuke3
+﻿namespace Ukesoppgaveuke3
 {
     internal class Program
     {
