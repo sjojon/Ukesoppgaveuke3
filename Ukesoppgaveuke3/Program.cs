@@ -55,14 +55,17 @@
 
         public static void AddPet(List<Pet> pets)
         {
-            Console.WriteLine(
-                "Please enter a pet to add:");
+            Console.WriteLine("Please enter a pet to add:");
+
             Console.WriteLine("Name:");
             string name = Console.ReadLine();
+
             Console.WriteLine("Age:");
             int age = int.Parse(Console.ReadLine());
+
             Console.WriteLine("Breed:");
             string breed = Console.ReadLine();
+
             Console.WriteLine("Favorite food:");
             string favoriteFood = Console.ReadLine();
 
@@ -76,12 +79,25 @@
             Console.Clear();
             ListPets(pets);
             Console.WriteLine("What pet do you want to feed?");
-            string nameToFeed = Console.ReadLine();
+            string? nameToFeed = Console.ReadLine();
+
+            Pet? pet = pets.Find(x => x.Name == nameToFeed);
+            if (pet == null)
+            {
+                Console.Clear();
+                Console.WriteLine("Unknown pet!");
+                return;
+            }
+            
+
+
+
             Console.WriteLine("What do you want to feed it with?");
-            string food = Console.ReadLine();
-            //Pet.Feed(nameToFeed);
-            //Pet.Feed(nameToFeed, food);
-            Pet pet = pets.Find(x => x.Name == nameToFeed);
+            string? food = Console.ReadLine();
+
+            // Bruk av ? for å fjerne blå linjer(kan være satt til null)
+            //Pet pet = pets.Find(x => x.Name == nameToFeed);
+
             if (pet != null)
             {
                 if (food == pet.FavoriteFood)

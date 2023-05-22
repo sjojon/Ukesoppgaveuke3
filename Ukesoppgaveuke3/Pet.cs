@@ -7,7 +7,6 @@
         public string Breed { get; private set; }
         public string FavoriteFood { get; private set; }
 
-
         public Pet(string newName, int newAge, string newBreed, string newFavoriteFood)
         {
             Name = newName;
@@ -17,14 +16,16 @@
         }
 
 
-        public void Feed()
+        public void
+            Feed() // Når denne er static, må man hente ut "klassen" mens når den er non-static, kan man bruke instansen?
+            // Pet.Feed() Vs pet.Feed()
         {
             Console.Clear();
             Console.WriteLine($"Takk for maten!");
             Console.WriteLine();
         }
 
-        public void Feed(string name, string food)
+        public void Feed(string name, string food) //overload riktig måte?
         {
             if (name == Name && food == FavoriteFood)
             {
@@ -35,3 +36,7 @@
         }
     }
 }
+
+// static
+// overload
+// spørsmålstegn
